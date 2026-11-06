@@ -3,8 +3,6 @@ import { MarketRecord } from '../interfaces/market_record.interface';
 
 export class MarketResultsPage {
     readonly page: Page;
-    //private readonly url = 'https://www.epexspot.com/en/market-results?market_area=GB&auction=&delivery_date=2026-11-04&underlying_year=&modality=Continuous&sub_modality=&technology=&data_mode=table&period=&production_period=&product=30';
-
 
     constructor(page: Page) {
         this.page = page;
@@ -44,12 +42,6 @@ export class MarketResultsPage {
             timeout: 60000
         });
     }
-    // async navigateToMarketResults(): Promise<void> {
-    //     await this.page.goto(this.url, {
-    //         waitUntil: 'domcontentloaded',
-    //         timeout: 60000
-    //     });
-    // }
 
     async acceptCookies(): Promise<void> {
         await this.page.getByRole('button', { name: 'Allow all cookies' }).click();
